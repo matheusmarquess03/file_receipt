@@ -25,7 +25,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
 
-  # Raise exceptions instead of rendering exception templates.
+  # Raise failure instead of rendering failure templates.
   config.action_dispatch.show_exceptions = false
 
   # Disable request forgery protection in test environment.

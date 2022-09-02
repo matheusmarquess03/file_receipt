@@ -7,6 +7,12 @@ class SalesController < ApplicationController
 
     def import
       raise 'File not found!' if params[:file].blank?
+
+      @total_gross_income = ::Sales::ImportService.call(params[:file])
+
+      if @total_gross_income
+        redirect_to sales_path, notice: "Sales was successfully imported. Total gross income: #{@total_gross_income}"
+      end
     end
   end
 end
