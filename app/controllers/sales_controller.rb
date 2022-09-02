@@ -1,3 +1,5 @@
+include ActionView::Helpers::NumberHelper
+
 class SalesController < ApplicationController
   def index
     def index
@@ -6,12 +8,13 @@ class SalesController < ApplicationController
     end
 
     def import
-      raise 'File not found!' if params[:file].blank?
-
+      @import = ::Sales::ImportService.(params[:file])
       @total_gross_income = ::Sales::ImportService.call(params[:file])
 
-      if @total_gross_income
-        redirect_to sales_path, notice: "Sales was successfully imported. Total gross income: #{@total_gross_income}"
+      if @import[:success]
+        redirect_to sales_path, notice: "Sales was successfully imported. Total gross income: #{number_to_currency(@import[:value])}"
+      else
+        redirect_to sales_path, flash: { error: @import[:value] }
       end
     end
   end

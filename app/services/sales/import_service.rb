@@ -2,8 +2,6 @@ require 'csv'
 
 module Sales
   class ImportService < ApplicationService
-    class ImportError < StandardError; end
-
     def initialize(file, klasses: {})
       @file = file
     end
@@ -17,7 +15,8 @@ module Sales
     attr_reader :file
 
     def parser_file
-      raise ImportError.new, "File invalid!" unless file_extension_valid?
+      return result("File invalid!") unless file_extension_valid?
+      return result("File is empty!") if File.zero?(file)
 
       @total_gross_income = 0
 
@@ -39,7 +38,7 @@ module Sales
         @total_gross_income += total_gross_income(item_parsed[:item_price], quantity)
       end
 
-      @total_gross_income
+      result(@total_gross_income, true)
     end
 
     def create_merchant(sale_info)
@@ -97,6 +96,10 @@ module Sales
     def file_extension_valid?
       extension = File.extname(file)
       extension == ".tab"
+    end
+
+    def result(value, success=false)
+      {value: value, success: success}
     end
   end
 end
