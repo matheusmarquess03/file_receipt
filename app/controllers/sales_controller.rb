@@ -3,6 +3,7 @@ include ActionView::Helpers::NumberHelper
 class SalesController < ApplicationController
   def index
     def index
+      @total = ::Sales::CalculateTotalService.call
       @sales = Sale.all
       @sales = @sales.paginate(:page => params[:page], :per_page => 10)
     end

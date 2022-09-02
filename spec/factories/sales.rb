@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :sale do
     item
-    purchaser
+    association :purchaser, factory: :person
   end
 end
