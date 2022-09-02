@@ -24,7 +24,9 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+#Will Paginate
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap4'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
