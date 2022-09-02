@@ -1,2 +1,44 @@
-<h1>Sales#index</h1>
-<p>Find me in app/views/sales/index.html.erb</p>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <%= form_with(url: import_sales_path, method: :post, multipart: true, class: "form-inline") do %>
+      <div class="form-group mb-2">
+        <%= label_tag "file", "Sale file:" %>
+        <%= file_field_tag :file, class: "form-control-file" %>
+      </div>
+
+      <%= submit_tag "Import", class: "btn btn-primary mb-2" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% if @sales.blank? %>
+      <hr />
+      <div>
+        <p>There are no registered sales.</p>
+      </div>
+    <% else %>
+      <h2>Sales</h2>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Info</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @sales.each do |sale| %>
+          <tr>
+            <td><%#= sale_info %></td>
+            <td><%#= sale_info %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="pages">
+        <%= will_paginate @sales, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+      </div>
+    <% end %>
+  </div>
+</div>
