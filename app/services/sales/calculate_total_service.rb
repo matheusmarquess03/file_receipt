@@ -9,7 +9,7 @@ module Sales
     private
 
     def calculate_total
-      Sale.joins(:item).sum(:price)
+      Sale.select(:quantity).joins(:item).sum('price*quantity')
     end
   end
 end

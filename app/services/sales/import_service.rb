@@ -2,7 +2,7 @@ require 'csv'
 
 module Sales
   class ImportService < ApplicationService
-    def initialize(file, klasses: {})
+    def initialize(file)
       @file = file
     end
 
@@ -16,7 +16,7 @@ module Sales
 
     def parser_file
       return result("File invalid!") unless file_extension_valid?
-      return result("File is empty!") if File.zero?(file)
+      return result("File is empty!") if File.empty?(file)
 
       @total_gross_income = 0
 
@@ -51,12 +51,11 @@ module Sales
     end
 
     def create_sales(quantity, item, purchaser)
-      quantity.times do
-        Sale.create(
-          item_id: item.id,
-          purchaser_id: purchaser.id,
-          ) unless item.blank? || purchaser.blank?
-      end
+      Sale.find_or_create_by(
+        item_id: item.id,
+        purchaser_id: purchaser.id,
+        quantity: quantity,
+      ) unless item.blank? || purchaser.blank?
     end
 
     def create_person(name)
@@ -76,7 +75,7 @@ module Sales
     def parser_address(address)
       number = address&.split&.shift
       street = address&.split&.drop(1)&.join(" ")
-      {number: number, street: street}
+      { number: number, street: street }
     end
 
     def create_item(merchant, item)
@@ -98,8 +97,8 @@ module Sales
       extension == ".tab"
     end
 
-    def result(value, success=false)
-      {value: value, success: success}
+    def result(value, success = false)
+      { value: value, success: success }
     end
   end
 end

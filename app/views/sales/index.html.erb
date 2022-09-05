@@ -36,6 +36,7 @@
           <th scope="col">Purchaser Name</th>
           <th scope="col">Item Description</th>
           <th scope="col">Item Price</th>
+          <th scope="col">Purchaser Count</th>
           <th scope="col">Merchant Address</th>
           <th scope="col">Merchant Name</th>
         </tr>
@@ -46,6 +47,7 @@
             <td><%= sale.purchaser.name %></td>
             <td><%= sale.item.description %></td>
             <td><%= number_to_currency(sale.item.price) %></td>
+            <td><%= sale.quantity %></td>
             <td><%= "#{sale.item&.merchant&.addresses&.first&.number} #{sale.item&.merchant&.addresses&.first&.street}" %></td>
             <td><%= sale.item&.merchant&.name %></td>
           </tr>

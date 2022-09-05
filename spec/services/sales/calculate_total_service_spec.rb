@@ -10,7 +10,7 @@ RSpec.describe Sales::CalculateTotalService do
   end
 
   context "when there are registered sales" do
-    let(:sales) { create_list(:sale, 5) }
+    let(:sales) { create(:sale, quantity: 2) }
 
     before { sales }
 
