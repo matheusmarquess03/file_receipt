@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Sales::ImportService do
-  subject { described_class.call(file) }
+  subject { described_class.call(file, user) }
+  let!(:user) { create :user }
 
   context "when the file was not sent" do
     let(:file) { "" }

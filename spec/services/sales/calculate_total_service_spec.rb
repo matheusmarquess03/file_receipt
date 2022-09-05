@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Sales::CalculateTotalService do
-  subject { described_class.call }
+  subject { described_class.call(user) }
+  let!(:user) { create :user }
 
   context "when there are no registered sales" do
     it "returns zero" do

@@ -2,8 +2,9 @@ require 'csv'
 
 module Sales
   class ImportService < ApplicationService
-    def initialize(file)
+    def initialize(file, user)
       @file = file
+      @user = user
     end
 
     def call
@@ -12,7 +13,7 @@ module Sales
 
     private
 
-    attr_reader :file
+    attr_reader :file, :user
 
     def parser_file
       return result("File invalid!") unless file_extension_valid?
@@ -55,6 +56,7 @@ module Sales
         item_id: item.id,
         purchaser_id: purchaser.id,
         quantity: quantity,
+        user_id: user.id
       ) unless item.blank? || purchaser.blank?
     end
 
