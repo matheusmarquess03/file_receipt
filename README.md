@@ -1,24 +1,57 @@
-# README
+# Welcome to File Receipt :wave:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center">
+  <img src="https://assets.nuuvem.com/assets/fe/images/nuuvem_logo-ab61ec645af3a6db7df0140d4792f31a.svg" alt="qcx" width="160" /> 
+</p>
 
-Things you may want to cover:
 
-* Ruby version
+The project is about importing a company's sales from a text file (separated by tabs - [file](example_input.tab)).
 
-* System dependencies
+[About the challenge](about.md)
 
-* Configuration
+## Running the project
 
-* Database creation
+ ```shell
+- Ruby - 2.7.2
+ - Rails - 6.0.3
+```
+## :information_source: Step by Step
+1. Create the database
+   ```
+   rails db:create
+   ```
+2. Run the migrations
+   ```
+   rails db:migrate
+   ```
+3. Install gems and dependencies
+   ```
+   bundle install
+   ```
+   ```
+   yarn install
+   ```
+4. Run the tests
+   ```
+   rspec
+   ```
+5. Run the application
+   ```
+   rails server
+   ```
 
-* Database initialization
+## :information_source: To access the project in the browser
 
-* How to run the test suite
+```
+localhost:3000
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## :information_source: Documentation
+For this project, a separate guide was provided with sales data for merchants and purchasers. Our goal was to model the project so that it was possible to upload the file and consume this data.
 
-* Deployment instructions
 
-* ...
+### Author
+
+[Matheus Marques](https://www.linkedin.com/in/matheuscmarques/)
+
+> This is a challenge by (Nuuvem)[https://www.nuuvem.com/br-pt/]

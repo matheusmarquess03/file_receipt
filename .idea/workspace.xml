@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="489303a8-03bd-4e39-a506-29bd8042c930" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/nuuvem.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/shared/_header.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/shared/_intro.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/file_receiver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/file_receiver.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/sales_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sales_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/sales/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sales/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/sales_request_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/views/sales/index.html.erb_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nuuvemchallenge" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -70,6 +59,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/spec/fixtures" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
     </key>
   </component>
@@ -187,7 +178,7 @@
       <updated>1661984161755</updated>
       <workItem from="1661984167123" duration="2220000" />
       <workItem from="1661986787650" duration="2672000" />
-      <workItem from="1662074896007" duration="10238000" />
+      <workItem from="1662074896007" duration="45130000" />
     </task>
     <servers />
   </component>
