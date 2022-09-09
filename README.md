@@ -53,5 +53,3 @@ For this project, a separate guide was provided with sales data for merchants an
 ### Author
 
 [Matheus Marques](https://www.linkedin.com/in/matheuscmarques/)
-
-> This is a challenge by (Nuuvem)[https://www.nuuvem.com/br-pt/]
